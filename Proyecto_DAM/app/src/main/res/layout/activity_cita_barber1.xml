@@ -181,11 +181,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="30dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="@color/dark_grey"
                 android:padding="5dp"
                 android:text="Inicio"
                 android:textColor="@color/white"
-                android:textSize="20dp" />
+                android:textSize="15dp" />
 
             <Button
                 android:id="@+id/btnGuardar"
@@ -193,11 +193,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_margin="30dp"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="@color/dark_grey"
                 android:padding="5dp"
                 android:text="Enviar formulario"
                 android:textColor="@color/white"
-                android:textSize="20dp" />
+                android:textSize="15dp" />
 
         </LinearLayout>
 

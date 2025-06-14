@@ -35,22 +35,22 @@ class TercerFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflamos el layout para el fragmento
+
         val view = inflater.inflate(R.layout.fragment_tercer, container, false)
 
-        // Encuentra el botón y configura el click listener para el ver mas
+
         val btnVerMasBarber1 = view.findViewById<Button>(R.id.btnVerMasBarber1)
         btnVerMasBarber1.setOnClickListener {
             val intent = Intent(requireContext(), ver_mas_barber::class.java)
             startActivity(intent)
         }
-        // Encuentra el botón y configura el click listener para el segundo ver mas
+
         val btnVerMasBarber2 = view.findViewById<Button>(R.id.btnVerMasBarber2)
         btnVerMasBarber2.setOnClickListener {
             val intent = Intent(requireContext(), ver_mas_barber2::class.java)
             startActivity(intent)
         }
-        // Encuentra el botón y configura el click listener para el tercer ver mas
+
         val btnVerMasBarber3 = view.findViewById<Button>(R.id.btnVerMasBarber3)
         btnVerMasBarber3.setOnClickListener {
             val intent = Intent(requireContext(), ver_mas_barber3::class.java)

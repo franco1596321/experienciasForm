@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         false
     }
 
-    ////////////////////////////
+         ////////////////////////////
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //SEGUNDOS DEL INICIO (SPLASH)

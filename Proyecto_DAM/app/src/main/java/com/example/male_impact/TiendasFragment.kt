@@ -35,40 +35,35 @@ class TiendasFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflamos el layout para el fragmento
+
         val view = inflater.inflate(R.layout.fragment_tiendas, container, false)
 
-        // Encuentra el botón y configura el click listener para el ver mas
+
         val btnVerMasTienda = view.findViewById<Button>(R.id.btnVerMasTienda)
         btnVerMasTienda.setOnClickListener {
             val intent = Intent(requireContext(), ver_mas_tienda1::class.java)
             startActivity(intent)
         }
-        // Encuentra el botón y configura el click listener para el segundo ver mas
         val btnVerMasTienda2 = view.findViewById<Button>(R.id.btnVerMasTienda2)
         btnVerMasTienda2.setOnClickListener {
             val intent = Intent(requireContext(), ver_mas_tienda2::class.java)
             startActivity(intent)
         }
-        // Encuentra el botón y configura el click listener para el ver mas
         val btnVerMasTienda3 = view.findViewById<Button>(R.id.btnVerMasTienda3)
         btnVerMasTienda3.setOnClickListener {
             val intent = Intent(requireContext(), ver_mas_tienda3::class.java)
             startActivity(intent)
         }
-        // Encuentra el botón y configura el click listener para el ver mas
         val btnVerMasTienda4 = view.findViewById<Button>(R.id.btnVerMasTienda4)
         btnVerMasTienda4.setOnClickListener {
             val intent = Intent(requireContext(), ver_mas_tienda4::class.java)
             startActivity(intent)
         }
-        // Encuentra el botón y configura el click listener para el ver mas
         val btnVerMasTienda5 = view.findViewById<Button>(R.id.btnVerMasTienda5)
         btnVerMasTienda5.setOnClickListener {
             val intent = Intent(requireContext(), ver_mas_tienda5::class.java)
             startActivity(intent)
         }
-        // Encuentra el botón y configura el click listener para el ver mas
         val btnVerMasTienda6 = view.findViewById<Button>(R.id.btnVerMasTienda6)
         btnVerMasTienda6.setOnClickListener {
             val intent = Intent(requireContext(), ver_mas_tienda6::class.java)

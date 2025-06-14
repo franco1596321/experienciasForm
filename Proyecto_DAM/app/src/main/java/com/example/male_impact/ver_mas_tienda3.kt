@@ -24,10 +24,8 @@ class ver_mas_tienda3 : AppCompatActivity() {
         btnInicio = findViewById(R.id.btnTiendaInicio3)
 
         btnInicio.setOnClickListener {
-            // Crear el Intent para ir a MainActivity
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            // Cerramos la actividad actual
             finish()
         }
     }

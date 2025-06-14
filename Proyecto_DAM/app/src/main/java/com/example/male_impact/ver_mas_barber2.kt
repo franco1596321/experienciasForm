@@ -29,10 +29,9 @@ class ver_mas_barber2 : AppCompatActivity() {
             startActivity(intent)
         }
         btnInicio2.setOnClickListener {
-            // Crear el Intent para ir a MainActivity
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            // Cerramos la actividad actual
+
             finish()
         }
     }

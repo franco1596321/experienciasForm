@@ -30,10 +30,8 @@ class ver_mas_barber3 : AppCompatActivity() {
         }
 
         btnInicio3.setOnClickListener {
-            // Crear el Intent para ir a MainActivity
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            // Cerramos la actividad actual
             finish()
         }
 
