@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Male_Impact</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="nomBarber1">Barbería Joseph</string>
+    <string name="desc1">Especialistas en degradado y cortes a tijera</string>
+    <string name="nomBarber2">Barbería Molano</string>
+    <string name="desc2">Especialistas en diseño</string>
+    <string name="nomBarber3">Barbería Ruzafa</string>
+    <string name="desc3">Especialistas en colorimetria</string>
+    <string name="verMarDescrip">Expertos en degradado y cortes a tijera, para un estilo impecable y moderno.</string>
+    <string name="verMarDescrip2">Especialistas en diseño de cortes únicos y personalizados.</string>
+    <string name="verMarDescrip3">Profesionales en colorimetría para resultados vibrantes y de calidad.</string>
+
+
+    <string name="nomTienda1">Calvin Klein</string>
+    <string name="descTienda1">Moda minimalista y sofisticada para el hombre moderno.</string>
+
+    <string name="nomTienda2">Zara</string>
+    <string name="descTienda2">Estilo elegante y moderno con un toque europeo.</string>
+
+    <string name="nomTienda3">Nike</string>
+    <string name="descTienda3">Ropa y calzado deportivo de alta calidad.</string>
+
+    <string name="nomTienda4">Uniqlo</string>
+    <string name="descTienda4">Prendas básicas de alta calidad y diseño funcional.</string>
+
+    <string name="nomTienda5">Tommy Hilfiger</string>
+    <string name="descTienda5">Moda clásica americana con un toque moderno.</string>
+
+    <string name="nomTienda6">Levi´s</string>
+    <string name="descTienda6">Pionera en jeans de calidad y durabilidad.</string>
+
+    <string name="verMarTienda1">Calvin Klein es conocida por su estilo minimalista y elegante, ofreciendo desde ropa casual y deportiva hasta trajes y accesorios.</string>
+    <string name="verMarTienda2">Zara es conocida por su habilidad para ofrecer moda de alta calidad y estilo contemporáneo.</string>
+    <string name="verMarTienda3">Nike es un referente en ropa y calzado deportivo, combinando rendimiento y estilo. </string>
+    <string name="verMarTienda4">Uniqlo se especializa en básicos bien diseñados y funcionales que no pasan de moda.</string>
+    <string name="verMarTienda5">Tommy Hilfiger ofrece ropa de estilo clásico con un toque moderno que refleja el estilo americano.</string>
+    <string name="verMarTienda6">Levis es reconocida mundialmente por sus jeans icónicos y su enfoque en la durabilidad.</string>
+
+</resources>

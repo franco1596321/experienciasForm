@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BienvenidoFragment">
+
+    <!-- Imagen de fondo para dar estilo -->
+    <ImageView
+        android:id="@+id/img_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/imgbarsinedit" /> <!-- Reemplaza con tu imagen de fondo -->
+
+    <!-- Capa semi-transparente para mejorar la legibilidad -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AA403C3C" /> <!-- Color negro con transparencia -->
+
+    <!-- Contenido principal en un LinearLayout centrado -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <!-- Título de bienvenida -->
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quiénes somos"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Descripción sobre quiénes somos -->
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Somos más que una barbería, somos un espacio donde el estilo y el cuidado personal se fusionan con la tradición y la modernidad. En Male Impact , nos especializamos en cortes de cabello que se adaptan a cada estilo y personalidad, brindando un servicio de excelencia y dedicación."
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_marginBottom="32dp"
+            android:layout_gravity="center"
+            android:padding="16dp"
+            android:background="#55000000"
+           />
+
+        <!-- Imagen decorativa con margen inferior para visualización -->
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo"
+            android:contentDescription="Logo de la empresa"
+            android:scaleType="centerInside"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Texto final -->
+        <TextView
+            android:id="@+id/tv_explore_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Sé parte de nuestra comunidad y experimenta cómo redefinimos el estilo y el cuidado personal juntos. ¡Descubre lo que podemos crear para ti!"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="24dp"
+            android:gravity="center" />
+
+    </LinearLayout>
+</FrameLayout>

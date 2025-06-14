@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<item
+    android:id="@+id/itemFragment1"
+    android:icon="@drawable/ic_home"
+    android:title="Conócenos"
+/>
+    <item
+        android:id="@+id/itemFragment2"
+        android:icon="@drawable/servicios"
+        android:title="Servicios"
+        />
+     <item
+    android:id="@+id/itemFragment3"
+    android:icon="@drawable/barberia"
+    android:title="Barberias"
+    />
+    <item
+        android:id="@+id/itemFragment4"
+        android:icon="@drawable/tiendas"
+        android:title="Tiendas"
+        />
+</menu>

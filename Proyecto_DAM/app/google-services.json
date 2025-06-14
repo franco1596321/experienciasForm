@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "781966627081",
+    "project_id": "maleimpact-14377",
+    "storage_bucket": "maleimpact-14377.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781966627081:android:92f04c7edd7e37e57f43d8",
+        "android_client_info": {
+          "package_name": "com.example.male_impact"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJWvrjHAEguOY2vqnrkSU3eJD2tiOIG5A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
