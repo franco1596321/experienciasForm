@@ -44,6 +44,8 @@ android {
 dependencies {
     implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("androidx.fragment:fragment-ktx:1.8.4")
+    implementation("com.google.firebase:firebase-storage:20.3.0")
+    implementation ("com.google.firebase:firebase-database:20.3.0")
 
     // generar PDF
     implementation("com.itextpdf:kernel:7.2.5")

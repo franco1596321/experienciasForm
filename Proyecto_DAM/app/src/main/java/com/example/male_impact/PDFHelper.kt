@@ -19,8 +19,8 @@ object PDFHelper {
         telefono: String,
         fecha: String,
         origen: String
-    ) {
-        try {
+    ): File? {
+        return try {
             val pdfPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString()
             val file = File(pdfPath, "cita_${nombre.replace(" ", "_")}.pdf")
 
@@ -37,11 +37,12 @@ object PDFHelper {
             document.add(Paragraph("Barbería: $origen"))
 
             document.close()
-
             Toast.makeText(context, "📄 PDF generado: ${file.name}", Toast.LENGTH_SHORT).show()
+            file
         } catch (e: Exception) {
             e.printStackTrace()
             Toast.makeText(context, "❌ Error al generar PDF", Toast.LENGTH_SHORT).show()
+            null
         }
     }
 }

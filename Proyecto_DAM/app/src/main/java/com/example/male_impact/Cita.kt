@@ -3,28 +3,20 @@ package com.example.male_impact
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.male_impact.databinding.ActivityCitaBinding
 import com.example.male_impact.util.PDFHelper
+import com.google.firebase.database.FirebaseDatabase
+import java.io.File
 
 class Cita : AppCompatActivity() {
-    lateinit var binding: ActivityCitaBinding
-    lateinit var almacenesDBHelper: SQLiteHelper
+    private lateinit var binding: ActivityCitaBinding
+    private lateinit var almacenesDBHelper: SQLiteHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityCitaBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
         almacenesDBHelper = SQLiteHelper(this)
 
@@ -41,16 +33,13 @@ class Cita : AppCompatActivity() {
 
                 almacenesDBHelper.anadirDatosJ(nombre, apellido, edad, correo, telefono, motivo)
 
-                // Generar PDF
-                PDFHelper.generarReportePDF(this, nombre, apellido, edad, correo, telefono, motivo, "Cita General")
+                val archivoPDF: File? = PDFHelper.generarReportePDF(
+                    this, nombre, apellido, edad, correo, telefono, motivo, "Cita General"
+                )
 
-                binding.etNombre.text.clear()
-                binding.etApellido.text.clear()
-                binding.etEdad.text.clear()
-                binding.etCorreo.text.clear()
-                binding.etTelefono.text.clear()
-                binding.etMotivos.text.clear()
+                subirAFirebaseRealtime(nombre, apellido, edad, correo, telefono, motivo)
 
+                limpiarCampos()
                 Toast.makeText(this, "Registro añadido exitosamente", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "No se añadió", Toast.LENGTH_SHORT).show()
@@ -60,6 +49,32 @@ class Cita : AppCompatActivity() {
         binding.btRegresarJ.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
+        }
+    }
+
+    private fun limpiarCampos() {
+        binding.etNombre.text.clear()
+        binding.etApellido.text.clear()
+        binding.etEdad.text.clear()
+        binding.etCorreo.text.clear()
+        binding.etTelefono.text.clear()
+        binding.etMotivos.text.clear()
+    }
+
+    private fun subirAFirebaseRealtime(nombre: String, apellido: String, edad: String, correo: String, telefono: String, motivo: String) {
+        val db = FirebaseDatabase.getInstance().getReference("citas_generales")
+        val datos = mapOf(
+            "nombre" to nombre,
+            "apellido" to apellido,
+            "edad" to edad,
+            "correo" to correo,
+            "telefono" to telefono,
+            "motivo" to motivo
+        )
+        db.push().setValue(datos).addOnSuccessListener {
+            Toast.makeText(this, "✅ Cita subida a Firebase", Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener {
+            Toast.makeText(this, "❌ Error al subir cita", Toast.LENGTH_SHORT).show()
         }
     }
 }
