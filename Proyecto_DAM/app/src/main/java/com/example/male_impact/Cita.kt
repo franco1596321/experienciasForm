@@ -40,7 +40,7 @@ class Cita : AppCompatActivity() {
                 subirAFirebaseRealtime(nombre, apellido, edad, correo, telefono, motivo)
 
                 limpiarCampos()
-                Toast.makeText(this, "Registro añadido exitosamente", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "✅ Registro añadido exitosamente", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "No se añadió", Toast.LENGTH_SHORT).show()
             }
@@ -72,7 +72,7 @@ class Cita : AppCompatActivity() {
             "motivo" to motivo
         )
         db.push().setValue(datos).addOnSuccessListener {
-            Toast.makeText(this, "✅ Cita subida a Firebase", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, " ", Toast.LENGTH_SHORT).show()
         }.addOnFailureListener {
             Toast.makeText(this, "❌ Error al subir cita", Toast.LENGTH_SHORT).show()
         }

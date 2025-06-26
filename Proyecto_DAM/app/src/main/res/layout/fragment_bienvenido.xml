@@ -37,9 +37,10 @@
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="casual"
                 android:text="Quiénes somos"
                 android:textSize="28sp"
-                android:textStyle="bold"
+                android:textStyle="italic"
                 android:textColor="#FFFFFF"
                 android:layout_marginBottom="16dp" />
 

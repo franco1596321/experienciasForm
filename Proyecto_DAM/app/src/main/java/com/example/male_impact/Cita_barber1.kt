@@ -35,13 +35,13 @@ class Cita_barber1 : AppCompatActivity() {
                 citaDBHelper.anadirDatos(nombre, apellido, edad, correo, telefono, fecha)
 
                 val archivoPDF = PDFHelper.generarReportePDF(
-                    this, nombre, apellido, edad, correo, telefono, fecha, "Barbería 1"
+                    this, nombre, apellido, edad, correo, telefono, fecha, "cliente"
                 )
 
                 subirAFirebaseRealtime(nombre, apellido, edad, correo, telefono, fecha)
 
                 limpiarCampos()
-                Toast.makeText(this, "Cita enviada exitosamente", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "❌ Cita enviada exitosamente. ", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Cita no enviada", Toast.LENGTH_SHORT).show()
             }
@@ -73,7 +73,7 @@ class Cita_barber1 : AppCompatActivity() {
             "fecha" to fecha
         )
         db.push().setValue(datos).addOnSuccessListener {
-            Toast.makeText(this, "✅ Cita subida a Firebase", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "", Toast.LENGTH_SHORT).show()
         }.addOnFailureListener {
             Toast.makeText(this, "❌ Error al subir cita", Toast.LENGTH_SHORT).show()
         }

@@ -8,220 +8,149 @@
     android:background="@drawable/imgbarber"
     tools:context=".Cita_barber1">
 
-
+    <!-- contenedor principal con formulario vertical -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="8dp"
-        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
-            android:id="@+id/tvNom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:text="Ingrese sus nombres"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            />
-
+        <!-- campo nombre -->
         <EditText
             android:id="@+id/etNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="8dp"
             android:background="#D5CDCD"
-            android:hint="NOMBRE"
+            android:hint="Nombre"
             android:minHeight="48dp"
             android:padding="10dp"
             android:textAlignment="center"
-            android:textColorHint="@color/black"
             android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textColorHint="@color/black"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif-medium" />
 
-        <TextView
-            android:id="@+id/tvApe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:text="Ingrese sus apellidos"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            />
-
+        <!-- campo apellido -->
         <EditText
             android:id="@+id/etApellido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="8dp"
             android:background="#D5CDCD"
-            android:hint="APELLIDO"
+            android:hint="Apellido"
             android:minHeight="48dp"
             android:padding="10dp"
             android:textAlignment="center"
-            android:textColorHint="@color/black"
             android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textColorHint="@color/black"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif-medium" />
 
-        <TextView
-            android:id="@+id/tvEdad"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:text="Ingrese su edad"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            />
-
+        <!-- campo edad -->
         <EditText
             android:id="@+id/etEdad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="8dp"
             android:background="#D5CDCD"
-            android:hint="EDAD"
+            android:hint="Edad"
+            android:inputType="number"
             android:minHeight="48dp"
             android:padding="10dp"
             android:textAlignment="center"
-            android:textColorHint="@color/black"
             android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textColorHint="@color/black"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif-medium" />
 
-        <TextView
-            android:id="@+id/tvCorreo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:text="Ingrese su correo"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            />
-
+        <!-- campo correo -->
         <EditText
             android:id="@+id/etCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="8dp"
             android:background="#D5CDCD"
-            android:hint="CORREO"
+            android:hint="Correo"
+            android:inputType="textEmailAddress"
             android:minHeight="48dp"
             android:padding="10dp"
             android:textAlignment="center"
-            android:textColorHint="@color/black"
             android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textColorHint="@color/black"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif-medium" />
 
-        <TextView
-            android:id="@+id/tvCelular"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:text="Ingrese su numero celular"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            />
-
+        <!-- campo telefono -->
         <EditText
             android:id="@+id/etTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="8dp"
             android:background="#D5CDCD"
-            android:hint="TELEFONO CELULAR"
+            android:hint="Teléfono celular"
+            android:inputType="phone"
             android:minHeight="48dp"
             android:padding="10dp"
             android:textAlignment="center"
-            android:textColorHint="@color/black"
             android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textColorHint="@color/black"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif-medium" />
 
-        <TextView
-            android:id="@+id/tvFecha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:text="Ingrese la fecha deseada"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            />
-
+        <!-- campo fecha -->
         <EditText
             android:id="@+id/etFecha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="8dp"
             android:background="#D5CDCD"
-            android:hint="FECHA Y HORA"
+            android:hint="Fecha y hora"
+            android:inputType="datetime"
             android:minHeight="48dp"
             android:padding="10dp"
             android:textAlignment="center"
-            android:textColorHint="@color/black"
             android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textColorHint="@color/black"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif-medium" />
 
+        <!-- botones finales -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
 
             <Button
                 android:id="@+id/btnAtras"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="30dp"
                 android:layout_weight="1"
+                android:layout_margin="8dp"
                 android:backgroundTint="@color/dark_grey"
-                android:padding="5dp"
-                android:text="Inicio"
+                android:text="REGRESAR INICIO"
                 android:textColor="@color/white"
-                android:textSize="15dp" />
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-medium" />
 
             <Button
                 android:id="@+id/btnGuardar"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="30dp"
+                android:layout_margin="8dp"
                 android:backgroundTint="@color/dark_grey"
-                android:padding="5dp"
-                android:text="Enviar formulario"
+                android:text="ENVIAR CITA"
                 android:textColor="@color/white"
-                android:textSize="15dp" />
-
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-medium" />
         </LinearLayout>
-
     </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

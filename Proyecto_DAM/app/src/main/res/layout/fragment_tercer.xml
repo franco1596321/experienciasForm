@@ -1,266 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/imgbarber"
     tools:context=".TercerFragment">
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <LinearLayout
-        android:id="@+id/linearContenedorPrincipal"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:padding="16dp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewBarberia1"
+        <LinearLayout
+            android:id="@+id/linearContenedorPrincipal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="10dp"
-            app:cardBackgroundColor="@android:color/black"
-            >
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/linearBarberia1"
+            <!-- CARD 1 -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imgBarberia1"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    tools:ignore="ContentDescription"
-                    app:srcCompat="@drawable/img_baberia_joseph" />
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#1A1A1A">
 
                 <LinearLayout
-                    android:id="@+id/linearBarberiaText1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:orientation="vertical">
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
-                    <TextView
-                        android:id="@+id/tv1"
-                        android:layout_width="match_parent"
+                    <ImageView
+                        android:id="@+id/imgBarberia1"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/img_baberia_joseph"
+                        tools:ignore="ContentDescription" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginTop="5dp"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp"
-                        android:textAlignment="center"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#1E8179"
-                        android:text="@string/nomBarber1" />
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp"
+                        android:gravity="center_vertical">
 
-                    <TextView
-                        android:id="@+id/tv2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginTop="5dp"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp"
-                        android:textAlignment="center"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#0A87B6"
-                        android:text="@string/desc1" />
+                        <TextView
+                            android:id="@+id/tv1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nomBarber1"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#1E8179"
+                            android:fontFamily="casual"
+                            android:textAlignment="center" />
 
-                    <Button
-                        android:id="@+id/btnVerMasBarber1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="50dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:backgroundTint="#434242"
-                        android:text="Ver más" />
+                        <TextView
+                            android:id="@+id/tv2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/desc1"
+                            android:textSize="14sp"
+                            android:textColor="#E0E0E0"
+                            android:fontFamily="sans-serif-light"
+                            android:textAlignment="center"
+                            android:layout_marginTop="4dp" />
 
+                        <Button
+                            android:id="@+id/btnVerMasBarber1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:text="Ver más"
+                            android:textAllCaps="false"
+                            android:textColor="#FFFFFF"
+                            android:fontFamily="sans-serif-medium"
+                            android:backgroundTint="#0A87B6"
+                            android:paddingHorizontal="24dp"
+                            android:paddingVertical="8dp" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewBarberia2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="10dp"
-            app:cardBackgroundColor="@android:color/black"
-            >
-
-            <LinearLayout
-                android:id="@+id/linearBarberia2"
+            <!-- CARD 2 -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imgBarberia2"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    tools:ignore="ContentDescription"
-                    app:srcCompat="@drawable/img_barberia_molano" />
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#1A1A1A">
 
                 <LinearLayout
-                    android:id="@+id/linearBarberiaText2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:orientation="vertical">
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
-                    <TextView
-                        android:id="@+id/tv3"
-                        android:layout_width="match_parent"
+                    <ImageView
+                        android:id="@+id/imgBarberia2"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/img_barberia_molano"
+                        tools:ignore="ContentDescription" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginTop="5dp"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp"
-                        android:textAlignment="center"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#1E8179"
-                        android:text="@string/nomBarber2" />
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp"
+                        android:gravity="center_vertical">
 
-                    <TextView
-                        android:id="@+id/tv4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginTop="5dp"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp"
-                        android:textAlignment="center"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#0A87B6"
-                        android:text="@string/desc2" />
+                        <TextView
+                            android:id="@+id/tv3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nomBarber2"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#1E8179"
+                            android:fontFamily="casual"
+                            android:textAlignment="center" />
 
-                    <Button
-                        android:id="@+id/btnVerMasBarber2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="50dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:backgroundTint="#434242"
-                        android:text="Ver más" />
+                        <TextView
+                            android:id="@+id/tv4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/desc2"
+                            android:textSize="14sp"
+                            android:textColor="#E0E0E0"
+                            android:fontFamily="sans-serif-light"
+                            android:textAlignment="center"
+                            android:layout_marginTop="4dp" />
 
+                        <Button
+                            android:id="@+id/btnVerMasBarber2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:text="Ver más"
+                            android:textAllCaps="false"
+                            android:textColor="#FFFFFF"
+                            android:fontFamily="sans-serif-medium"
+                            android:backgroundTint="#0A87B6"
+                            android:paddingHorizontal="24dp"
+                            android:paddingVertical="8dp" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewBarberia3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="10dp"
-            app:cardBackgroundColor="@android:color/black"
-            >
-
-            <LinearLayout
-                android:id="@+id/linearBarberia3"
+            <!-- CARD 3 -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imgBarberia3"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    tools:ignore="ContentDescription"
-                    app:srcCompat="@drawable/img_barberia_ruzafa" />
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#1A1A1A">
 
                 <LinearLayout
-                    android:id="@+id/linearBarberiaText3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:orientation="vertical">
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
-                    <TextView
-                        android:id="@+id/tv5"
-                        android:layout_width="match_parent"
+                    <ImageView
+                        android:id="@+id/imgBarberia3"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/img_barberia_ruzafa"
+                        tools:ignore="ContentDescription" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginTop="5dp"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp"
-                        android:textAlignment="center"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#1E8179"
-                        android:text="@string/nomBarber3" />
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp"
+                        android:gravity="center_vertical">
 
-                    <TextView
-                        android:id="@+id/tv6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginTop="5dp"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp"
-                        android:textAlignment="center"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#0A87B6"
-                        android:text="@string/desc3" />
+                        <TextView
+                            android:id="@+id/tv5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nomBarber3"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#1E8179"
+                            android:fontFamily="casual"
+                            android:textAlignment="center" />
 
-                    <Button
-                        android:id="@+id/btnVerMasBarber3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="50dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:backgroundTint="#434242"
-                        android:text="Ver más" />
+                        <TextView
+                            android:id="@+id/tv6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/desc3"
+                            android:textSize="14sp"
+                            android:textColor="#E0E0E0"
+                            android:fontFamily="sans-serif-light"
+                            android:textAlignment="center"
+                            android:layout_marginTop="4dp" />
 
+                        <Button
+                            android:id="@+id/btnVerMasBarber3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:text="Ver más"
+                            android:textAllCaps="false"
+                            android:textColor="#FFFFFF"
+                            android:fontFamily="sans-serif-medium"
+                            android:backgroundTint="#0A87B6"
+                            android:paddingHorizontal="24dp"
+                            android:paddingVertical="8dp" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>
