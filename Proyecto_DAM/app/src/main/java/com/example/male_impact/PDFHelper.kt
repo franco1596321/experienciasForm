@@ -4,12 +4,16 @@ import android.content.Context
 import android.os.Environment
 import android.widget.Toast
 import com.itextpdf.kernel.colors.ColorConstants
+import com.itextpdf.kernel.colors.DeviceRgb
 import com.itextpdf.kernel.pdf.PdfDocument
 import com.itextpdf.kernel.pdf.PdfWriter
 import com.itextpdf.layout.Document
-import com.itextpdf.layout.element.LineSeparator
+import com.itextpdf.layout.borders.SolidBorder
+import com.itextpdf.layout.element.Cell
 import com.itextpdf.layout.element.Paragraph
+import com.itextpdf.layout.element.Table
 import com.itextpdf.layout.properties.TextAlignment
+import com.itextpdf.layout.properties.UnitValue
 import java.io.File
 
 object PDFHelper {
@@ -20,7 +24,7 @@ object PDFHelper {
         edad: String,
         correo: String,
         telefono: String,
-        fecha: String,
+        motivo: String,
         origen: String
     ): File? {
         return try {
@@ -31,40 +35,61 @@ object PDFHelper {
             val pdfDocument = PdfDocument(pdfWriter)
             val document = Document(pdfDocument)
 
-            // Título estilizado
-            val titulo = Paragraph("📋 MALE IMPACT - CONFIRMACIÓN DE CITA")
+            // Paleta de colores
+            val azulFuerte = DeviceRgb(21, 32, 43)
+            val azulResaltado = DeviceRgb(33, 150, 243)
+            val grisClaro = DeviceRgb(245, 245, 245)
+            val fondoCaja = DeviceRgb(250, 250, 250)
+
+            // Encabezado elegante
+            val header = Paragraph("💈 MALE IMPACT")
+                .setFontSize(26f)
+                .setFontColor(ColorConstants.WHITE)
                 .setBold()
-                .setFontSize(20f)
                 .setTextAlignment(TextAlignment.CENTER)
-                .setFontColor(ColorConstants.BLUE)
-            document.add(titulo)
+                .setBackgroundColor(azulFuerte)
+                .setPaddingTop(20f)
+                .setPaddingBottom(8f)
+            document.add(header)
 
-            // Línea divisoria básica
-            val linea = Paragraph("────────────────────────────────────")
+            val subHeader = Paragraph("CONFIRMACIÓN DE CITA")
+                .setFontSize(14f)
+                .setFontColor(ColorConstants.WHITE)
                 .setTextAlignment(TextAlignment.CENTER)
-                .setFontSize(12f)
-                .setFontColor(ColorConstants.GRAY)
-            document.add(linea)
+                .setBackgroundColor(azulFuerte)
+                .setPaddingBottom(20f)
+            document.add(subHeader)
 
-            // Detalles de la cita
-            val detalles = Paragraph("""
-                ▪ Nombre: $nombre $apellido
-                ▪ Edad: $edad años
-                ▪ Correo: $correo
-                ▪ Teléfono: $telefono
-                ▪ Fecha: $fecha
-                ▪ Servicio: $origen
-            """.trimIndent())
-                .setFontSize(12f)
-                .setMarginTop(15f)
-            document.add(detalles)
-
-            // Pie de página
-            val pie = Paragraph("Gracias por confiar en Male Impact.")
-                .setItalic()
-                .setTextAlignment(TextAlignment.CENTER)
-                .setFontSize(10f)
+            // Caja de información
+            val caja = Table(UnitValue.createPercentArray(floatArrayOf(35f, 65f)))
+                .useAllAvailableWidth()
                 .setMarginTop(25f)
+                .setBackgroundColor(fondoCaja)
+                .setBorder(SolidBorder(azulResaltado, 1f))
+
+            caja.addCell(celdaEtiqueta("👤 Nombre completo")).addCell(celdaDato("$nombre $apellido"))
+            caja.addCell(celdaEtiqueta("🎂 Edad")).addCell(celdaDato("$edad años"))
+            caja.addCell(celdaEtiqueta("📧 Correo")).addCell(celdaDato(correo))
+            caja.addCell(celdaEtiqueta("📱 Teléfono")).addCell(celdaDato(telefono))
+            caja.addCell(celdaEtiqueta("📝 Motivo")).addCell(celdaDato(motivo))
+            caja.addCell(celdaEtiqueta("🏢 Servicio")).addCell(celdaDato(origen))
+
+            document.add(caja)
+
+            // Separador visual
+            document.add(
+                Paragraph("─".repeat(40))
+                    .setFontColor(ColorConstants.LIGHT_GRAY)
+                    .setTextAlignment(TextAlignment.CENTER)
+                    .setMarginTop(20f)
+            )
+
+            // Mensaje final
+            val pie = Paragraph("Gracias por elegirnos.\n¡Te esperamos!")
+                .setTextAlignment(TextAlignment.CENTER)
+                .setFontSize(11f)
+                .setItalic()
+                .setMarginTop(20f)
             document.add(pie)
 
             document.close()
@@ -75,5 +100,22 @@ object PDFHelper {
             Toast.makeText(context, "❌ Error al generar PDF", Toast.LENGTH_SHORT).show()
             null
         }
+    }
+
+    private fun celdaEtiqueta(text: String): Cell {
+        return Cell()
+            .add(Paragraph(text).setBold())
+            .setBackgroundColor(DeviceRgb(230, 230, 230))
+            .setFontSize(12f)
+            .setPadding(8f)
+            .setBorderBottom(SolidBorder(ColorConstants.LIGHT_GRAY, 0.5f))
+    }
+
+    private fun celdaDato(text: String): Cell {
+        return Cell()
+            .add(Paragraph(text))
+            .setFontSize(12f)
+            .setPadding(8f)
+            .setBorderBottom(SolidBorder(ColorConstants.LIGHT_GRAY, 0.5f))
     }
 }

@@ -47,8 +47,7 @@ dependencies {
     implementation("com.google.firebase:firebase-storage:20.3.0")
     implementation("com.google.firebase:firebase-database:20.3.0")
 
-    // PDF - Usa solo una misma versión para evitar errores
-// PDF: Solo UNA versión compatible
+
     implementation("com.itextpdf:kernel:7.2.5")
     implementation("com.itextpdf:layout:7.2.5")
 
