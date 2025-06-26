@@ -17,52 +17,36 @@ class Cita_barber1 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCitaBarber1Binding.inflate(layoutInflater)
         setContentView(binding.root)
-
         citaDBHelper = SQLiteHelper(this)
-
         binding.btnGuardar.setOnClickListener {
             val nombre = binding.etNombre.text.toString()
             val apellido = binding.etApellido.text.toString()
             val edad = binding.etEdad.text.toString()
             val correo = binding.etCorreo.text.toString()
             val telefono = binding.etTelefono.text.toString()
-            val fecha = binding.etFecha.text.toString()
-
+            val motivo = binding.etMotivos.text.toString()
             if (nombre.isNotBlank() && apellido.isNotBlank() &&
                 edad.isNotBlank() && correo.isNotBlank() &&
-                telefono.isNotBlank() && fecha.isNotBlank()) {
-
-                citaDBHelper.anadirDatos(nombre, apellido, edad, correo, telefono, fecha)
-
+                telefono.isNotBlank() && motivo.isNotBlank()) {
+                citaDBHelper.anadirDatos(nombre, apellido, edad, correo, telefono, motivo)
                 val archivoPDF = PDFHelper.generarReportePDF(
-                    this, nombre, apellido, edad, correo, telefono, fecha, "cliente"
-                )
-
-                subirAFirebaseRealtime(nombre, apellido, edad, correo, telefono, fecha)
-
+                    this, nombre, apellido, edad, correo, telefono, motivo, "Cita General")
+                subirAFirebaseRealtime(nombre, apellido, edad, correo, telefono, motivo)
                 limpiarCampos()
-                Toast.makeText(this, "❌ Cita enviada exitosamente. ", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Cita no enviada", Toast.LENGTH_SHORT).show()
-            }
-        }
-
+                Toast.makeText(this, " Cita enviada exitosamente. ", Toast.LENGTH_SHORT).show() } else {
+                Toast.makeText(this, "❌ Cita no enviada", Toast.LENGTH_SHORT).show() } }
         binding.btnAtras.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
-            finish()
-        }
-    }
-
+            finish() } }
     private fun limpiarCampos() {
         binding.etNombre.text.clear()
         binding.etApellido.text.clear()
         binding.etEdad.text.clear()
         binding.etCorreo.text.clear()
         binding.etTelefono.text.clear()
-        binding.etFecha.text.clear()
-    }
-
-    private fun subirAFirebaseRealtime(nombre: String, apellido: String, edad: String, correo: String, telefono: String, fecha: String) {
+        binding.etMotivos.text.clear() }
+    private fun subirAFirebaseRealtime(nombre: String, apellido: String, edad: String,
+                                       correo: String, telefono: String, motivo: String) {
         val db = FirebaseDatabase.getInstance().getReference("citas_barberia1")
         val datos = mapOf(
             "nombre" to nombre,
@@ -70,12 +54,8 @@ class Cita_barber1 : AppCompatActivity() {
             "edad" to edad,
             "correo" to correo,
             "telefono" to telefono,
-            "fecha" to fecha
-        )
+            "motivo" to motivo)
         db.push().setValue(datos).addOnSuccessListener {
             Toast.makeText(this, "", Toast.LENGTH_SHORT).show()
         }.addOnFailureListener {
-            Toast.makeText(this, "❌ Error al subir cita", Toast.LENGTH_SHORT).show()
-        }
-    }
-}
+            Toast.makeText(this, "❌ Error al subir cita", Toast.LENGTH_SHORT).show() } } }

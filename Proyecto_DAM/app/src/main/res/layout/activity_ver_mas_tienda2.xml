@@ -22,7 +22,7 @@
             android:orientation="vertical"
             android:padding="24dp">
 
-            <!-- Imagen principal -->
+
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="200dp"
@@ -31,7 +31,7 @@
                 android:layout_marginBottom="24dp"
                 app:srcCompat="@drawable/zara_1" />
 
-            <!-- Título -->
+
             <TextView
                 android:id="@+id/tvPeluqueriasIntro"
                 android:layout_width="match_parent"
@@ -43,7 +43,7 @@
                 android:fontFamily="casual"
                 android:layout_marginBottom="8dp" />
 
-            <!-- Descripción -->
+
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
@@ -56,7 +56,7 @@
                 android:lineSpacingExtra="6dp"
                 android:layout_marginBottom="24dp" />
 
-            <!-- Galería de imágenes -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
                     app:srcCompat="@drawable/zara_4" />
             </LinearLayout>
 
-            <!-- Botón -->
+
             <Button
                 android:id="@+id/btnTiendaInicio2"
                 android:layout_width="match_parent"

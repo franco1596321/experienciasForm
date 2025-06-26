@@ -12,12 +12,10 @@ import java.io.File
 class Cita : AppCompatActivity() {
     private lateinit var binding: ActivityCitaBinding
     private lateinit var almacenesDBHelper: SQLiteHelper
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCitaBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         almacenesDBHelper = SQLiteHelper(this)
 
         binding.btGuardar.setOnClickListener {
@@ -30,37 +28,24 @@ class Cita : AppCompatActivity() {
 
             if (nombre.isNotBlank() && apellido.isNotBlank() &&
                 edad.isNotBlank() && correo.isNotBlank() && telefono.isNotBlank()) {
-
                 almacenesDBHelper.anadirDatosJ(nombre, apellido, edad, correo, telefono, motivo)
-
                 val archivoPDF: File? = PDFHelper.generarReportePDF(
-                    this, nombre, apellido, edad, correo, telefono, motivo, "Cita General"
-                )
-
+                    this, nombre, apellido, edad, correo, telefono, motivo, "Cita General")
                 subirAFirebaseRealtime(nombre, apellido, edad, correo, telefono, motivo)
-
                 limpiarCampos()
                 Toast.makeText(this, "✅ Registro añadido exitosamente", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "No se añadió", Toast.LENGTH_SHORT).show()
-            }
-        }
-
+                Toast.makeText(this, "No se añadió", Toast.LENGTH_SHORT).show() } }
         binding.btRegresarJ.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
-            finish()
-        }
-    }
-
+            finish() } }
     private fun limpiarCampos() {
         binding.etNombre.text.clear()
         binding.etApellido.text.clear()
         binding.etEdad.text.clear()
         binding.etCorreo.text.clear()
         binding.etTelefono.text.clear()
-        binding.etMotivos.text.clear()
-    }
-
+        binding.etMotivos.text.clear() }
     private fun subirAFirebaseRealtime(nombre: String, apellido: String, edad: String, correo: String, telefono: String, motivo: String) {
         val db = FirebaseDatabase.getInstance().getReference("citas_generales")
         val datos = mapOf(

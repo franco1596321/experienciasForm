@@ -29,13 +29,14 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Reserva tu cita"
+                android:text="Cita Servicio"
                 android:textSize="32sp"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:fontFamily="casual"
                 android:layout_marginBottom="24dp" />
+
 
             <EditText
                 android:id="@+id/etNombre"
@@ -82,13 +83,13 @@
             <Button
                 android:id="@+id/btGuardar"
                 style="@style/CustomButton"
-                android:text="GUARDAR"
+                android:text="Guardar"
                 android:fontFamily="sans-serif-medium" />
 
             <Button
                 android:id="@+id/btRegresarJ"
                 style="@style/CustomButton"
-                android:text="REGRESAR"
+                android:text="Regresar"
                 android:fontFamily="sans-serif-medium" />
 
             <Button

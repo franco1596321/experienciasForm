@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,149 +9,100 @@
     android:background="@drawable/imgbarber"
     tools:context=".Cita_barber1">
 
-    <!-- contenedor principal con formulario vertical -->
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="8dp"
-        android:paddingHorizontal="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- campo nombre -->
-        <EditText
-            android:id="@+id/etNombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            android:background="#D5CDCD"
-            android:hint="Nombre"
-            android:minHeight="48dp"
-            android:padding="10dp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textSize="15sp"
-            android:fontFamily="sans-serif-medium" />
-
-        <!-- campo apellido -->
-        <EditText
-            android:id="@+id/etApellido"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            android:background="#D5CDCD"
-            android:hint="Apellido"
-            android:minHeight="48dp"
-            android:padding="10dp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textSize="15sp"
-            android:fontFamily="sans-serif-medium" />
-
-        <!-- campo edad -->
-        <EditText
-            android:id="@+id/etEdad"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            android:background="#D5CDCD"
-            android:hint="Edad"
-            android:inputType="number"
-            android:minHeight="48dp"
-            android:padding="10dp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textSize="15sp"
-            android:fontFamily="sans-serif-medium" />
-
-        <!-- campo correo -->
-        <EditText
-            android:id="@+id/etCorreo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            android:background="#D5CDCD"
-            android:hint="Correo"
-            android:inputType="textEmailAddress"
-            android:minHeight="48dp"
-            android:padding="10dp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textSize="15sp"
-            android:fontFamily="sans-serif-medium" />
-
-        <!-- campo telefono -->
-        <EditText
-            android:id="@+id/etTelefono"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            android:background="#D5CDCD"
-            android:hint="Teléfono celular"
-            android:inputType="phone"
-            android:minHeight="48dp"
-            android:padding="10dp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textSize="15sp"
-            android:fontFamily="sans-serif-medium" />
-
-        <!-- campo fecha -->
-        <EditText
-            android:id="@+id/etFecha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            android:background="#D5CDCD"
-            android:hint="Fecha y hora"
-            android:inputType="datetime"
-            android:minHeight="48dp"
-            android:padding="10dp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textSize="15sp"
-            android:fontFamily="sans-serif-medium" />
-
-        <!-- botones finales -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="16dp">
+            android:orientation="vertical"
+            android:layout_margin="16dp"
+            android:padding="16dp"
+            android:background="@drawable/bg_rounded_white_translucent">
 
-            <Button
-                android:id="@+id/btnAtras"
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_margin="8dp"
-                android:backgroundTint="@color/dark_grey"
-                android:text="REGRESAR INICIO"
+                android:text="Tu barberia preferida"
+                android:textSize="32sp"
+                android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                android:fontFamily="sans-serif-medium" />
+                android:textStyle="bold"
+                android:fontFamily="casual"
+                android:layout_marginBottom="24dp" />
 
-            <Button
-                android:id="@+id/btnGuardar"
-                android:layout_width="0dp"
+            <EditText
+                android:id="@+id/etNombre"
+                style="@style/CustomEditText"
+                android:hint="Nombre"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/etApellido"
+                style="@style/CustomEditText"
+                android:hint="Apellido"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/etEdad"
+                style="@style/CustomEditText"
+                android:hint="Edad"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/etCorreo"
+                style="@style/CustomEditText"
+                android:hint="Correo"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/etTelefono"
+                style="@style/CustomEditText"
+                android:hint="Teléfono celular"
+                android:inputType="phone" />
+
+            <EditText
+                android:id="@+id/etMotivos"
+                style="@style/CustomEditText"
+                android:hint="Motivo"
+                android:inputType="text" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_margin="8dp"
-                android:backgroundTint="@color/dark_grey"
-                android:text="ENVIAR CITA"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                android:fontFamily="sans-serif-medium" />
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <Button
+                    android:id="@+id/btnAtras"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="8dp"
+                    android:backgroundTint="@color/dark_grey"
+                    android:text="Regresar Inicio"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-medium" />
+
+                <Button
+                    android:id="@+id/btnGuardar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="8dp"
+                    android:backgroundTint="@color/dark_grey"
+                    android:text="Enviar Cita"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-medium" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".BienvenidoFragment">
 
-    <!-- Imagen de fondo -->
+
     <ImageView
         android:id="@+id/img_background"
         android:layout_width="match_parent"
@@ -14,13 +14,13 @@
         android:scaleType="centerCrop"
         android:src="@drawable/imgbarsinedit" />
 
-    <!-- Capa semitransparente -->
+
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#55000000" />
 
-    <!-- Contenido principal -->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -79,7 +79,7 @@
 
 
 
-            <!-- Botón de cerrar sesión -->
+
             <Button
                 android:id="@+id/btn_logout"
                 android:layout_width="wrap_content"
