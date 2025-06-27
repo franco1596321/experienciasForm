@@ -12,8 +12,6 @@ class ver_mas_barber : AppCompatActivity() {
 
     private lateinit var btnReservarBarber1 : Button
     private lateinit var btnInicio : Button
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -25,21 +23,14 @@ class ver_mas_barber : AppCompatActivity() {
         }
         btnReservarBarber1 = findViewById(R.id.btnReservarBarber1)
         btnInicio = findViewById(R.id.btnInicio)
-
         btnReservarBarber1.setOnClickListener{
             val intent = Intent(this,Cita_barber1::class.java)
             startActivity(intent)
         }
-
         btnInicio.setOnClickListener {
-
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-
             finish()
         }
-
-
-
     }
 }

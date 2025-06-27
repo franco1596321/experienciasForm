@@ -59,14 +59,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Splash de 2 segundos
+
         Thread.sleep(2000)
         installSplashScreen()
-
-
         FirebaseApp.initializeApp(this)
-
-
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
